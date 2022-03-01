@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "comments",
+  "info": {
+    "name": "Comment",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "user_id": {
+      "private": true,
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "post_id": {
+      "private": true,
+      "model": "post"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "name": "Post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "privacity": {
+      "type": "enumeration",
+      "enum": [
+        "public",
+        "followers",
+        "follow",
+        "nearby",
+        "me"
+      ]
+    },
+    "location": {
+      "type": "string"
+    },
+    "tagged": {
+      "type": "json"
+    },
+    "call_to_action": {
+      "type": "json"
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "published",
+        "save",
+        "draf"
+      ]
+    },
+    "publish_in": {
+      "type": "enumeration",
+      "enum": [
+        "history",
+        "wall",
+        "route",
+        "lobby",
+        "company",
+        "external"
+      ]
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "files": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

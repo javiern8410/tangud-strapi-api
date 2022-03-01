@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reactions",
+  "info": {
+    "name": "Reaction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "post_id": {
+      "model": "post"
+    },
+    "user_id": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "comment_id": {
+      "model": "comment"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "like",
+        "love",
+        "haha",
+        "yay",
+        "wow",
+        "sad",
+        "angry"
+      ],
+      "required": true
+    }
+  }
+}
